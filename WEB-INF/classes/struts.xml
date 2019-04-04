@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">  
+<struts>  
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />  
+    <constant name="struts.devMode" value="true" />
+    <package name="default" extends="struts-default">  
+        <action name="BooksAction_*" class="com.zking.oa.Action.BooksAction" method="{1}">  
+        	<result name="myaddbook" type="redirect">/BooksAction_selectBooks</result>
+        	<result name="mydeletebooks" type="redirect">/BooksAction_selectBooks</result>
+        	<result name="myselectbyid">/editBook.jsp</result>
+        	
+        	<result name="myselectAddType">/editBook.jsp</result>
+        	
+        	<result name="myupdatebook" type="redirect">/BooksAction_selectBooks</result>
+        	
+        	<result name="myselectBooks">/listBook1.jsp</result>
+        	<result name="myselectBooks2">/listBook2.jsp</result>
+        	<result name="myselectBooks3">/listBook3.jsp</result>
+        	
+        	<result name="myselectBookAll">/findBook.jsp</result>
+        	
+        	<result name="upload">/uploadBookImage.jsp</result>
+        	
+        	<result name="mystate" type="redirect">/BooksAction_selectBooks</result>
+        	<result name="mystate2" type="redirect">/BooksAction_selectBooks2</result>
+        	<result name="mystate3" type="redirect">/BooksAction_selectBooks3</result>
+        	
+        	<result name="myselectbooktype">/findBook.jsp</result>
+        	
+        	<!-- 根据类别查询 -->
+        	<result name="myselectBookByType">/findBook.jsp</result>
+        	
+        	<!-- 根据最新上架书籍降序查询 -->
+        	<result name="myselectBookBydate">/findBook.jsp</result>
+        	
+        	<!-- 根据销量高低降序查询 -->
+        	<result name="myselectBookBySalesVolume">/findBook.jsp</result>
+        	
+        	<!-- 根据iD查询单个 -->
+        	<result name="myselectBookByIdIndex">/findBook.jsp</result>
+        </action>
+        
+        <!-- 订单 -->
+        <action name="OrderAction_*" class="com.zking.oa.Action.OrderAction" method="{1}">
+        	<result name="myselectAllorder" >/listOrder1.jsp</result>
+        	<result name="myselectAllorder2">/listOrder2.jsp</result>
+        	<result name="myselectAllorder3">/listOrder3.jsp</result>
+        	
+        	<result name="myorderstate"  type="redirect">/OrderAction_selectAllOrder</result>
+        	<result name="myorderstate2" type="redirect">/OrderAction_selectAllOrder2</result>
+        	<result name="myorderstate3" type="redirect">/OrderAction_selectAllOrder3</result>
+        	<!-- 前台订单
+        	传值 -->
+        	<result name="mydoValue">/addOrder.jsp</result>
+        	<!-- 增加购物车多个订单 -->
+        	<result name="myaddOrder">/index.jsp</result>
+        	<!-- 增加单个订单 -->
+        	<result name="mysubOneOrder">/addOrder.jsp</result>
+        	
+        	<!-- 查询我的订单 -->
+        	<result name="myselectOrder">/listMyOrder1.jsp</result>
+        	<result name="myselectOrder2">/listMyOrder2.jsp</result>
+        	<result name="myselectOrder3">/listMyOrder3.jsp</result>
+        	
+        	<result name="myselectorder001" type="redirect">/OrderAction_selectOrder</result>
+        	<result name="myselectorder002" type="redirect">/OrderAction_selectOrder2</result>
+        	<result name="myselectorder003" type="redirect">/OrderAction_selectOrder3</result>
+        	
+        	
+        	
+        </action>
+        
+        <!-- 文件上传 -->
+        <action name="UploadAction_*" class="com.zking.oa.Action.UploadAction" method="{1}">
+        	<result name="myupload" type="redirect">/BooksAction_selectBooks</result>
+        </action>
+        
+        <!-- 用户 -->
+        <action name="UserAction_*" class="com.zking.oa.Action.UserAction" method="{1}">
+        	<result name="reguser">/login.jsp</result>
+        	<result name="loginuser">/index.jsp</result>
+        	<result name="loginuserError">/login.jsp</result>
+        	<result name="myexitlogin">/index.jsp</result>
+        	
+        	<result name="myAdministration" type="redirect">/BooksAction_selectBooks</result>
+        </action>
+        
+        
+        <!-- 购物车 -->
+        <action name="ShopCatAction_*" class="com.zking.oa.Action.ShopCatAction" method="{1}">
+        	<result name="addbooktoshopcat" type="redirect">/BooksAction_selectAll</result>
+        	<result name="selectByUserid">/shoppingCar.jsp</result>
+        	<result name="notelogin">/login.jsp</result>
+        	<result name="myUpdateCatBookCount" type="redirect">/ShopCatAction_SelectByUserid</result>
+        	<result name="mydeletecatitem" type="redirect">/ShopCatAction_SelectByUserid</result>
+        	<result name="mydeleteallbook" type="redirect">/ShopCatAction_SelectByUserid</result>
+        </action>
+        
+        
+    </package>  
+</struts>  
